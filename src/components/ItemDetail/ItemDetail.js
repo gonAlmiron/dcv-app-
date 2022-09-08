@@ -1,6 +1,8 @@
 import Item from "../Item/Item"
+import { useParams } from "react-router-dom"
 
 const ItemDetail = ({item = []} ) => {
+    let {itemId } = useParams();
 
     return (
         <div className="container my-5">

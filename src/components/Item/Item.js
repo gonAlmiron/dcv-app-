@@ -1,4 +1,14 @@
+import { useNavigate } from "react-router-dom"
+import { terrario } from "../../data/terrario";
+
+
 const Item = ( {producto} ) => {
+    let navigate = useNavigate();
+
+    const handleNavigation = () => {
+        navigate(`/ItemDetail/${terrario.id}`)
+    }
+
     return (
         <div className="container mb-4">
                 <img className="foto" src={producto.img}/>
