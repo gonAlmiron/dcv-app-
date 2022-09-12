@@ -12,8 +12,9 @@ import { Navigate } from 'react-router-dom';
 function App() {
   return (
     <BrowserRouter>
+
         <NavBar/>
-        <hr/>
+        <br/>
 
         <Routes>
             <Route path='/' element={ <ItemListContainer/> }/>
@@ -23,12 +24,7 @@ function App() {
             <Route path='/Nosotros' element={<Nosotros/>}/>
             <Route path="*" element={<Navigate to="/"/>} />
           </Routes>
-        {/* <ItemDetailContainer idProducto={1}/> */}
         
-
-
-
-      
     </BrowserRouter>
    
   );

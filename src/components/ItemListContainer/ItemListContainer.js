@@ -19,7 +19,6 @@ const ItemListContainer = () => {
 
         pedirDatos()
         .then ((res) => {
-            setProductos(res)
             if (!categoryId) {
                 setProductos(res)
             } else {
@@ -41,11 +40,12 @@ const ItemListContainer = () => {
 
       
         <div>
-              {
+            {
             loading ? 
             <Spinner/>
-            : <ItemList productos={productos}/>
-              }
+            : 
+                <ItemList productos={productos}/>
+            }
         </div>
     )
 }
