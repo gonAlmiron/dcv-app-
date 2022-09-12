@@ -1,21 +1,19 @@
-import { useNavigate } from "react-router-dom";
-import { terrario } from "../../data/terrario";
+// import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
 
 import Card from 'react-bootstrap/Card';
 
 
 const Item = ( {producto} ) => {
-    let navigate = useNavigate();
+    // // let navigate = useNavigate();
 
-    const handleNavigation = () => {
-        navigate(`/ItemDetail/${terrario.id}`)
-    }
+    // const handleNavigation = () => {
+    //     navigate(`/ItemDetail/${terrario.id}`)
+    // }
 
     return (
         <Card className="container mb-5" style={{width: '25rem'}}>
             <Card.Img src={producto.img}/>
-              {/* <img className="foto" src={producto.img}/> */}
              <Card.Body>
                 <Card.Title>{producto.nombre}</Card.Title>
                 <p>Precio: ${producto.precio}</p>

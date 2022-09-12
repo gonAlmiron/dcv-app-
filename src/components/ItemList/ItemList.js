@@ -4,7 +4,7 @@ const ItemList = ( {productos = []} ) => {
     return (     
     
     <div className="row">
-    <h3>Productos</h3>
+    <h3 className="productos">Productos</h3>
     <hr/>
         { productos.map((prod) => (
         
