@@ -2,14 +2,21 @@ import { useState, useEffect } from "react"
 import {pedirDatos} from "../../helpers/pedirDatos"
 import ItemList from "../ItemList/ItemList"
 import { useParams } from "react-router-dom"
+import Spinner from "../Spinner/Spinner"
+
+
 
 
 const ItemListContainer = () => {
     const [productos, setProductos] = useState([])
+    const [loading, setLoading] = useState(true)
+
 
     const { categoryId } = useParams()
 
     useEffect(()=> {
+        setLoading(true)
+
         pedirDatos()
         .then ((res) => {
             setProductos(res)
@@ -22,15 +29,23 @@ const ItemListContainer = () => {
         })
         .catch((error) => {
             console.log(error)
+        }) .finally(() => {
+            setLoading(false)
         })
         
-    }, [])
+    }, [categoryId])
 
 
 
     return (
+
+      
         <div>
-            <ItemList productos={productos}/>
+              {
+            loading ? 
+            <Spinner/>
+            : <ItemList productos={productos}/>
+              }
         </div>
     )
 }

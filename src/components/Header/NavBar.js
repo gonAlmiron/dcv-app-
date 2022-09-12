@@ -1,46 +1,29 @@
-import React, { useState } from 'react';
+import Container from 'react-bootstrap/Container';
+import Nav from 'react-bootstrap/Nav';
+import Navbar from 'react-bootstrap/Navbar';
 import { Link } from 'react-router-dom';
-import {
-  Collapse,
-  Navbar,
-  NavbarToggler,
-  NavbarBrand,
-  Nav,
-  NavItem,
-  NavLink,
-  UncontrolledDropdown,
-  DropdownToggle,
-  DropdownMenu,
-  DropdownItem,
-  NavbarText,
-} from 'reactstrap';
-import Contacto from "../Contacto/Contacto"
+import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 
-function Example(args) {
-  const [isOpen, setIsOpen] = useState(false);
-
-  const toggle = () => setIsOpen(!isOpen);
-
+function ColorSchemesExample() {
   return (
-    <div>
-      <Navbar {...args}>
-      <Link to="/"><h1 className="header-title">Decilo con Vida</h1></Link>
-      <NavbarToggler onClick={toggle} />
-        <Collapse isOpen={isOpen} navbar>
-          <Nav className="me-auto" navbar>
-            <NavItem>
-            <Link to='/ItemListContainer/' className="header-navlink">Productos</Link>
-            </NavItem>
-            <NavItem>
-            <Link to='/Contacto/' className="header-navlink">Contacto</Link>
-            </NavItem>
+    <>
+    <Navbar bg="primary" variant="dark">
+        <Container>
+          <Navbar.Brand href="/">Decilo con Vida</Navbar.Brand>
+          <Nav className="me-auto">
+            <Link to="/productos/:categoryId" className="nav">Productos</Link>
+            <Link to="/Nosotros" className="nav">Nosotros</Link>
+            <Link to="/Contacto" className="nav">Contacto</Link>
+           
           </Nav>
-        </Collapse>
-    
+          <button><ShoppingCartIcon/></button>
+        </Container>
+        
         
       </Navbar>
-    </div>
+        
+    </>
   );
 }
 
-export default Example;
+export default ColorSchemesExample;

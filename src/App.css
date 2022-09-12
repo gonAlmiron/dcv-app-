@@ -17,8 +17,25 @@
 }
 
 .foto {
-  height:50%;
-  width: 50%
+  height:25%;
+  width: 25%;
+}
+.spinner {
+  position: relative;
+  margin-left: 160px;
+
+}
+
+.nav {
+  color: white;
+  margin-left: 20px;
+  padding: 1px;
+  position: relative;
+  font-weight: 300;
+  text-decoration: none;
+  font-weight: 500;
+  
+  
 }
 
 
