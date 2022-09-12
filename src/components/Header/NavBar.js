@@ -14,7 +14,8 @@ function ColorSchemesExample() {
             <Link to="/productos/:categoryId" className="nav">Productos</Link>
             <Link to="/Nosotros" className="nav">Nosotros</Link>
             <Link to="/Contacto" className="nav">Contacto</Link>
-           
+            
+        
           </Nav>
           <button><ShoppingCartIcon/></button>
         </Container>
