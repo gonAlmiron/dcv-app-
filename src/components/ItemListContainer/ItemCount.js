@@ -21,10 +21,6 @@ const handleRestar = () => {
     }
 }
 
-const handleAgregar = () => {
-
-}
-    
 useEffect( () => {
     console.log("Stock modificado")
 }, [counter, stock])
@@ -46,9 +42,9 @@ return (
         <span className="btn btn-outline-primary">{stock}</span>
 
     <br/>
-    <button className="btn btn-success my-4">
+    {/* <button className="btn btn-success my-4">
         Agregar al carrito
-    </button>
+    </button> */}
     </div>
 
 

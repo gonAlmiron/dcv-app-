@@ -12,16 +12,14 @@ const ItemListContainer = () => {
     const [loading, setLoading] = useState(true)
 
     const { categoryId } = useParams()
-    console.log(categoryId)
+    // console.log(categoryId)
 
     useEffect(() => {
         pedirDatos()
             .then( (res) => {
-                if (!categoryId) {
+               
                     setProductos(res)
-                } else {
-                    setProductos( res.filter((prod) => prod.category === categoryId) )
-                }
+               
             })
             .catch( (error) => {
                 console.log(error)
@@ -29,7 +27,7 @@ const ItemListContainer = () => {
             .finally(() => {
                 setLoading(false)
             })
-    }, [])
+    }, [categoryId])
 
 
     return (
