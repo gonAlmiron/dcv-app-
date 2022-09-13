@@ -20,22 +20,35 @@ const handleRestar = () => {
     setStock(stock + 1)
     }
 }
+
+const handleAgregar = () => {
+
+}
     
 useEffect( () => {
     console.log("Stock modificado")
 }, [counter, stock])
 
+
 return (
     <div className="container my-5">
        
-
-        <button onClick={handleRestar} className="btn btn-outline-primary">- </button>
+        <button 
+            onClick={handleRestar} 
+            className="btn btn-outline-primary">- </button>
         <span className="mx-2">{counter}</span>
-        <button onClick={handleSumar} className="btn btn-primary"> +</button>
+        <button 
+            onClick={handleSumar} 
+            className="btn btn-primary"> +</button>
         <br/>
         <br/>
         <h4>Stock</h4>
         <span className="btn btn-outline-primary">{stock}</span>
+
+    <br/>
+    <button className="btn btn-success my-4">
+        Agregar al carrito
+    </button>
     </div>
 
 
