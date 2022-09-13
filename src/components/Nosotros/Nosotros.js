@@ -6,7 +6,7 @@ const Nosotros = () => {
         <div className="container my-5">
         <h1>Nosotros</h1>
         <hr/>
-        <a> Empresa familiar de terrarios artesanales</a>
+        <p> Empresa familiar de terrarios artesanales</p>
     </div>
         )
 }

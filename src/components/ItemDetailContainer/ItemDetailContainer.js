@@ -2,7 +2,7 @@ import {useEffect, useState} from "react"
 import ItemDetail from "../ItemDetail/ItemDetail"
 import { useParams } from 'react-router-dom'
 import { getItem } from "../../helpers/getItem"
-import { pedirDatos } from "../../helpers/pedirDatos"
+// import { pedirDatos } from "../../helpers/pedirDatos"
 import Spinner from "../Spinner/Spinner"
 
 
