@@ -2,9 +2,12 @@ import { Link } from "react-router-dom";
 import Card from 'react-bootstrap/Card';
 
 
+
 const Item = ( {producto} ) => {
-    
-        <Card className="container mb-5" style={{width: '25rem'}}>
+
+
+    return (
+        <Card key={producto.id} className="container mb-5" style={{width: '25rem'}}>
             <Card.Img src={producto.img}/>
              <Card.Body>
                 <Card.Title>{producto.nombre}</Card.Title>
@@ -15,7 +18,7 @@ const Item = ( {producto} ) => {
 
              </Card.Body>
         </Card>
-    
+    )
 }
 
 export default Item

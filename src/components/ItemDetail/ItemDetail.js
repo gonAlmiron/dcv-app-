@@ -2,26 +2,25 @@
 import ItemCount from "../ItemListContainer/ItemCount";
 // import { useState } from "react";
 // import Item from "../Item/Item";
-
+import Card from 'react-bootstrap/Card';
 
 const ItemDetail = ({item}) => {
 
     return (
-        <div key={item.id} className="container my-5">
+        <Card className="container my-5" style={{width: '25rem'}}>
          
-            <img src={item.img} alt={item}/>
-            <h3>{item.nombre}</h3>
-            <p>{item.desc}</p>
+            <Card.Img src={item.img} alt={item}/>
+            <Card.Body>
+            <Card.Title>{item.nombre}</Card.Title>
+            <Card.Text>{item.desc}</Card.Text>
             <p>{item.category}</p>
             <h4>{item.precio}</h4>
 
             <h4>Detalle del producto</h4>
-
-         <hr/>
-         <ItemCount/>
-         {/* { item.map((prod) =>
-             <Item producto={prod} key={prod.id}/>) }    */}
-        </div>
+            <hr/>
+            <ItemCount/>
+            </Card.Body>
+        </Card>
     )
 }
 
@@ -31,7 +30,8 @@ export default ItemDetail
 
 
 
-
+//   {/* { item.map((prod) =>
+//              <Item producto={prod} key={prod.id}/>) }    */}
 
 
 

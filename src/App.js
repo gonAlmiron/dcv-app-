@@ -13,21 +13,24 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
   return (
-    <BrowserRouter>
 
-        <NavBar/>
-        <br/>
+   
 
-        <Routes>
-            <Route path='/' element={ <ItemListContainer/> }/>
-            <Route path='/Productos' element={<ItemListContainer/>} />
-            <Route path='/item/:itemId' element={<ItemDetailContainer/>}/>
-            <Route path='/Contacto' element={<Contacto/>}/>
-            <Route path='/Nosotros' element={<Nosotros/>}/>
-            <Route path="*" element={<Navigate to="/"/>} />
-          </Routes>
-        
-    </BrowserRouter>
+      <BrowserRouter>
+
+          <NavBar/>
+          <br/>
+
+          <Routes>
+              <Route path='/' element={ <ItemListContainer/> }/>
+              <Route path='/Productos' element={<ItemListContainer/>} />
+              <Route path='/item/:itemId' element={<ItemDetailContainer/>}/>
+              <Route path='/Contacto' element={<Contacto/>}/>
+              <Route path='/Nosotros' element={<Nosotros/>}/>
+              <Route path="*" element={<Navigate to="/"/>} />
+            </Routes>
+          
+      </BrowserRouter>
    
   );
 }
