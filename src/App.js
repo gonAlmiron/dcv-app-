@@ -7,31 +7,16 @@ import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import Contacto from './components/Contacto/Contacto';
 import Nosotros from './components/Nosotros/Nosotros';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { CartContext } from './context/CartContext';
-import { useState } from 'react';
+import { CartProvider } from './context/CartContext';
 import Cart from './components/Cart/Cart';
 
 
 
 function App() {
 
-  const [cart, setCart] = useState([])
-
-  const addToCart = (item) => {
-    setCart([...cart, item])
-  }
-
-  const isInCart = (id) => {
-  return cart.some((item) => item.id === id)
-}
-
   return (
 
-    <CartContext.Provider value={ {
-      cart,
-      addToCart,
-      isInCart
-    } }>
+    <CartProvider>
 
       <BrowserRouter>
 
@@ -50,7 +35,7 @@ function App() {
           
       </BrowserRouter>
    
-    </CartContext.Provider>
+    </CartProvider>
   );
 }
 

@@ -2,7 +2,7 @@ import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import { Link } from 'react-router-dom';
-import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
+import CartWidget from './CartWidget';
 
 function ColorSchemesExample() {
   return (
@@ -17,7 +17,7 @@ function ColorSchemesExample() {
             
         
           </Nav>
-          <button><ShoppingCartIcon/></button>
+          <CartWidget/>
         </Container>
         
         
