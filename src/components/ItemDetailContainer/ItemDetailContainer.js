@@ -31,9 +31,8 @@ const ItemDetailContainer = () => {
     return (
 
         <div>
-            { loading ? 
-            <Spinner/>
-            :
+            {    loading 
+                ? <Spinner/> :
             <ItemDetail item={item} key={itemId}/>
             
 }
