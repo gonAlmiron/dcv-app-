@@ -13,7 +13,6 @@ const ItemDetailContainer = () => {
 
     const {itemId} = useParams()
 
-    // console.log(itemId)
 
     useEffect(() => {
 
