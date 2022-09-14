@@ -15,10 +15,16 @@ const ItemListContainer = () => {
     // console.log(categoryId)
 
     useEffect(() => {
+        setLoading(true)
+
         pedirDatos()
             .then( (res) => {
-               
-                    setProductos(res)
+            if(!categoryId) {
+
+                setProductos(res)
+            } else {
+                setProductos(res.filter((prod)=> prod.category === categoryId) )
+            }
                
             })
             .catch( (error) => {

@@ -1,17 +1,15 @@
-import { useParams } from "react-router-dom"
+// import { useParams } from "react-router-dom"
 import ItemCount from "../ItemListContainer/ItemCount";
 // import { useState } from "react";
 // import Item from "../Item/Item";
 
 
 const ItemDetail = ({item}) => {
-    // let {itemId} = useParams();
-
 
     return (
-        <div className="container my-5">
+        <div key={item.id} className="container my-5">
          
-            <img src={item.img}/>
+            <img src={item.img} alt={item}/>
             <h3>{item.nombre}</h3>
             <p>{item.desc}</p>
             <p>{item.category}</p>
