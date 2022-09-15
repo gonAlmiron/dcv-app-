@@ -1,32 +1,33 @@
-import { useContext } from "react";
-import { CartContext } from "../../context/CartContext";
-import { Card } from "react-bootstrap";
-
+import { useCartContext } from "../../Context/CartContext"
+import {BsFillTrashFill} from "react-icons/bs"
+import { useDarkMode } from "../../Context/DarkModeContext"
 
 const Cart = () => {
 
-    const { cart } = useContext(CartContext)
+
+    const {cart, cartTotal, emptyCart, removeItem} = useCartContext()
+    const {darkMode} = useDarkMode()
+    console.log(darkMode)
 
     return (
+    <div className="container my-2">"
+    <h2>Carrito</h2>
+    <hr/>
 
-        <div className="container my-5">
-            <h2>Tu carrito</h2>
-           <hr/>
-           { cart.map((producto)=> (
-               <Card key={producto.id} className="container mb-5" style={{width: '25rem'}}>
-               <Card.Img src={producto.img} alt={producto}/>
-                <Card.Body key={producto.id}>
-                   <Card.Title>{producto.nombre}</Card.Title>
-                   <p>Precio: ${producto.precio}</p>
-                   <Card.Text>{producto.descripcion}</Card.Text>
-   
-                </Card.Body>
-           </Card>
-            ))
-           }
-        </div>
+        {cart.map((item) => (
+            <div key={item.id}>
+                <h5>{item.nombre}</h5>
+                <p>Cantidad: {item.cantidad}</p>
+                <p>Precio: ${item.precio}</p>
+                <button onClick={() => removeItem(item.id)}><BsFillTrashFill/></button>
+                <hr/>
+            </div>
+        ))}
+<h4>Total: ${cartTotal()}</h4>
+<button onClick={emptyCart} className="btn btn-danger">Vaciar carrito</button>
+</div>
+
     )
-
 }
 
 export default Cart
